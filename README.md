@@ -13,91 +13,95 @@ Features
 * Backend API for seat management
 * SQLite database integration
 
-Tech Stack
 
-Frontend
 
-* React
-* Vite
-* JavaScript (ES6+)
-* CSS
+Setup & Installation
 
-Backend
+Prerequisites
 
-* Node.js
-* Express.js
+* Node.js (v18 or higher)
+* npm (v8 or higher)
 
-Database
-
-* SQLite
-
-Project Structure
-
-seatwise/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── context/
-│   ├── pages/
-│   └── App.jsx
-├── server/
-│   ├── index.js
-│   └── seatwise.db
-├── public/
-├── package.json
-├── vite.config.js
-└── README.md
-
-Installation
-
-Clone the repository:
+Clone the Repository
 
 git clone <repository-url>
 cd seatwise
 
-Install dependencies:
+Install Dependencies
 
 npm install
 
-Running the Project
+⸻
 
-Start the Backend Server
+Environment Variables
+
+Create a .env file in the project root directory and add the following variable:
+
+VITE_API_URL=http://localhost:3001
+
+Environment Variable Reference
+
+Variable	Description
+VITE_API_URL	Base URL of the backend API used by the frontend application
+
+For production deployments, replace the local URL with your deployed backend URL:
+
+VITE_API_URL=https://your-backend-domain.com
+
+⸻
+
+Running the Application
+
+SeatWise consists of two parts:
+
+1. Frontend (React + Vite)
+2. Backend (Node.js + Express)
+
+Both services must be running for the application to function correctly.
+
+Start the Backend
+
+Open a terminal and run:
 
 npm run serve:server
 
-The backend will run on: http://localhost:3001
+Backend server will start at:
+
+http://localhost:3001
 
 Start the Frontend
 
-Open a new terminal and run:
+Open a second terminal and run:
 
 npm run dev
 
-The frontend will be available at: http://localhost:5173
+Frontend application will start at:
 
-Build for Production
+http://localhost:5173
+
+Open the frontend URL in your browser to access SeatWise.
+
+⸻
+
+Available Scripts
+
+npm run dev
+
+Starts the Vite development server.
+
+npm run serve:server
+
+Starts the Express backend server.
 
 npm run build
 
-The production files will be generated in the dist folder.
+Creates an optimized production build.
 
-Deployment
+npm run preview
 
-This project can be deployed using:
+Previews the production build locally.
 
-* Vercel (Frontend)
-* Render / Railway / VPS (Backend)
-
-Future Enhancements
-
-* User authentication
-* Login and signup functionality
-* Email notifications
-* Admin dashboard
-* Advanced analytics
-* QR-based seat check-in
-* Reservation history
-* Multiple library support
+⸻
 
 Author
 
