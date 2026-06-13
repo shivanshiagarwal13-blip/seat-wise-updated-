@@ -1,36 +1,108 @@
-# SeatWise – Library Seat Booking App
+SeatWise
 
-## Deploy to Vercel (Step-by-Step)
+SeatWise is a smart library seat booking and management system designed to help students find, reserve, and manage study spaces efficiently. The platform provides an interactive interface for viewing available seats, making reservations, and improving the overall study experience.
 
-### Step 1: Install Node.js
-Go to https://nodejs.org and download the "LTS" version. Install it like any normal app.
+Features
 
-### Step 2: Install Git
-Go to https://git-scm.com/downloads and install Git.
+* Interactive library seat map
+* Real-time seat availability tracking
+* Seat reservation and booking system
+* User-friendly dashboard
+* Study space information page
+* Responsive design for desktop and mobile devices
+* Backend API for seat management
+* SQLite database integration
 
-### Step 3: Create a GitHub account
-Go to https://github.com and sign up for free.
+Tech Stack
 
-### Step 4: Upload this project to GitHub
-1. Open a terminal / command prompt
-2. Run these commands one by one:
-   ```
-   cd seatwise
-   git init
-   git add .
-   git commit -m "first commit"
-   ```
-3. Go to github.com → click "New repository" → name it "seatwise" → click "Create repository"
-4. Copy the commands GitHub shows you (they start with `git remote add origin...`) and paste them in your terminal
+Frontend
 
-### Step 5: Deploy to Vercel
-1. Go to https://vercel.com and sign up with your GitHub account
-2. Click "Add New Project"
-3. Select your "seatwise" repository
-4. Under "Framework Preset", select **Vite**
-5. Click "Deploy"
-6. Wait ~1 minute — your site is live! 🎉
+* React
+* Vite
+* JavaScript (ES6+)
+* CSS
 
-## Login Credentials (Demo)
-- **Student**: any ID + any password → goes to Library Map
-- **Librarian**: any ID + any password → goes to Librarian Dashboard
+Backend
+
+* Node.js
+* Express.js
+
+Database
+
+* SQLite
+
+Project Structure
+
+seatwise/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── context/
+│   ├── pages/
+│   └── App.jsx
+├── server/
+│   ├── index.js
+│   └── seatwise.db
+├── public/
+├── package.json
+├── vite.config.js
+└── README.md
+
+Installation
+
+Clone the repository:
+
+git clone <repository-url>
+cd seatwise
+
+Install dependencies:
+
+npm install
+
+Running the Project
+
+Start the Backend Server
+
+npm run serve:server
+
+The backend will run on: http://localhost:3001
+
+Start the Frontend
+
+Open a new terminal and run:
+
+npm run dev
+
+The frontend will be available at: http://localhost:5173
+
+Build for Production
+
+npm run build
+
+The production files will be generated in the dist folder.
+
+Deployment
+
+This project can be deployed using:
+
+* Vercel (Frontend)
+* Render / Railway / VPS (Backend)
+
+Future Enhancements
+
+* User authentication
+* Login and signup functionality
+* Email notifications
+* Admin dashboard
+* Advanced analytics
+* QR-based seat check-in
+* Reservation history
+* Multiple library support
+
+Author
+
+Shivanshi Agarwal
+
+License
+
+This project is developed for educational and portfolio purposes.
