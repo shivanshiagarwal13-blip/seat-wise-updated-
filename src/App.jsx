@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage'
 import LibraryMap from './pages/LibraryMap'
 import AwayModePage from './pages/AwayModePage'
 import LibrarianDashboard from './pages/LibrarianDashboard'
+import InfoPage from './pages/InfoPage'
 
 function ProtectedRoute({ children, role }) {
   const { user } = useApp()
@@ -21,6 +22,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/info" element={<InfoPage />} />
           <Route path="/map" element={
             <ProtectedRoute role="student">
               <LibraryMap />

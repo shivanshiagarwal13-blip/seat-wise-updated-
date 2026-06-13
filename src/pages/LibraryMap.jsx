@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import {
   Bell, ChevronDown, LayoutDashboard, Map, Calendar, Clock, User,
   HelpCircle, LogOut, X, BookOpen, CheckCircle, Moon, Sun,
-  Mail, Phone, MessageSquare, TrendingUp, Users, AlertCircle, Zap
+  Mail, Phone, MessageSquare, TrendingUp, Users, AlertCircle, Zap, QrCode
 } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 
@@ -45,6 +45,7 @@ export default function LibraryMap() {
   const [darkMode, setDarkMode]   = useState(false)
   const [showNotif, setShowNotif] = useState(false)
   const [notifRead, setNotifRead] = useState([])
+  const [showQRScanner, setShowQRScanner] = useState(false)
   const notifRef = useRef(null)
 
   const soloSeats   = seats.filter(s => s.type === 'solo')
@@ -457,6 +458,15 @@ export default function LibraryMap() {
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
                 <span className="text-xs tracking-widest text-gray-300 border border-gray-200 px-4 py-1 rounded-full uppercase">Entrance</span>
               </div>
+
+              {/* QR Scan Floating Button */}
+              <button
+                onClick={() => setShowQRScanner(true)}
+                className="absolute bottom-6 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg hover:bg-primary-dark transition-all flex items-center justify-center hover:scale-110"
+                title="Scan QR Code"
+              >
+                <QrCode size={24} />
+              </button>
             </div>
           </div>
 
@@ -501,6 +511,45 @@ export default function LibraryMap() {
           <div>
             <p className="font-semibold text-sm">Checked in to Desk {currentBooking?.seatId}</p>
             <p className="text-xs text-gray-400">Your 2-hour session has started.</p>
+          </div>
+        </div>
+      )}
+
+      {/* QR Scanner Modal */}
+      {showQRScanner && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 w-96 max-w-full">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-xl font-bold text-gray-900">Scan QR Code</h3>
+              <button onClick={() => setShowQRScanner(false)} className="text-gray-400 hover:text-gray-600">
+                <X size={24} />
+              </button>
+            </div>
+            <div className="bg-gray-100 rounded-xl p-8 flex items-center justify-center mb-6 h-64">
+              <div className="text-center">
+                <QrCode size={64} className="text-gray-400 mx-auto mb-4" />
+                <p className="text-gray-600 text-sm">Camera scanning ready</p>
+                <p className="text-gray-500 text-xs mt-2">Point camera at QR code on desk</p>
+              </div>
+            </div>
+            <div className="space-y-3">
+              <button
+                onClick={() => {
+                  setShowQRScanner(false)
+                  setShowToast(true)
+                  setTimeout(() => setShowToast(false), 3000)
+                }}
+                className="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary-dark transition-colors"
+              >
+                Scan & Check In
+              </button>
+              <button
+                onClick={() => setShowQRScanner(false)}
+                className="w-full border border-gray-200 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         </div>
       )}
