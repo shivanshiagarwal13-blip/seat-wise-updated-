@@ -13,95 +13,46 @@ Features
 * Backend API for seat management
 * SQLite database integration
 
+ 
+Live Demo
 
+🌐 Frontend: https://seat-wise-website.vercel.app/map
 
-Setup & Installation
+Note: The deployed site currently includes only the frontend. To use all features locally, run the backend server at http://localhost:3001.
 
 Prerequisites
 
 * Node.js (v18 or higher)
 * npm (v8 or higher)
 
-Clone the Repository
+Installation
 
 git clone <repository-url>
 cd seatwise
-
-Install Dependencies
-
 npm install
-
-⸻
 
 Environment Variables
 
-Create a .env file in the project root directory and add the following variable:
+Create a .env file in the project root:
 
 VITE_API_URL=http://localhost:3001
 
-Environment Variable Reference
-
-Variable	Description
-VITE_API_URL	Base URL of the backend API used by the frontend application
-
-For production deployments, replace the local URL with your deployed backend URL:
-
-VITE_API_URL=https://your-backend-domain.com
-
-⸻
-
 Running the Application
 
-SeatWise consists of two parts:
-
-1. Frontend (React + Vite)
-2. Backend (Node.js + Express)
-
-Both services must be running for the application to function correctly.
-
-Start the Backend
-
-Open a terminal and run:
+Start the backend
 
 npm run serve:server
 
-Backend server will start at:
-
-http://localhost:3001
-
-Start the Frontend
-
-Open a second terminal and run:
+Start the frontend
 
 npm run dev
-
-Frontend application will start at:
-
-http://localhost:5173
-
-Open the frontend URL in your browser to access SeatWise.
-
-⸻
 
 Available Scripts
 
-npm run dev
-
-Starts the Vite development server.
-
-npm run serve:server
-
-Starts the Express backend server.
-
-npm run build
-
-Creates an optimized production build.
-
-npm run preview
-
-Previews the production build locally.
-
-⸻
+* npm run dev – Start the Vite development server.
+* npm run serve:server – Start the Express backend server.
+* npm run build – Create a production build.
+* npm run preview – Preview the production build locally.
 
 Author
 
@@ -110,3 +61,5 @@ Shivanshi Agarwal
 License
 
 This project is developed for educational and portfolio purposes.
+
+
